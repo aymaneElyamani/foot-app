@@ -3,10 +3,13 @@ import 'package:app010/colors.dart' as app_colors;
 import 'package:app010/models/github_repo.dart';
 import 'package:app010/services/repo_service_api.dart';
 import 'package:app010/widgets/async_state_views.dart';
+import 'package:app010/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final Function(int)? onPageChange;
+
+  const HomePage({super.key, this.onPageChange});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,7 +39,16 @@ class _HomePageState extends State<HomePage> {
     final secondary = Color(app_colors.secondary);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Mon mini CV')),
+      appBar: AppBar(
+        title: const Text('Mon mini CV'),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+      ),
+      drawer: AppDrawer(onPageSelected: widget.onPageChange ?? (_) {}),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

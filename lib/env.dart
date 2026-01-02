@@ -1,3 +1,3 @@
-const secretKey = "5a250b2e4b1945beb9ee8001246a1111" ;
+const secretKey = "784dfff5953941cc8aca212ee31e50fc" ;
 
 const domaine = "https://api.football-data.org/v4/" ;

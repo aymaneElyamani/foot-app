@@ -5,6 +5,7 @@ import 'package:app010/screens/competitions.dart';
 import 'package:app010/screens/equipe_classement.dart';
 import 'package:app010/screens/home.dart';
 import 'package:app010/screens/matchs.dart';
+import 'package:app010/widgets/app_drawer.dart';
 import 'package:app010/colors.dart' as app_colors;
 
 class Principalpage extends StatefulWidget {
@@ -17,12 +18,13 @@ class Principalpage extends StatefulWidget {
 class _PrincipalpageState extends State<Principalpage> {
   int _page = 0;
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-  final List<Widget> screens = [
-    const HomePage(),
-    const CompetitionsPage(),
-    const MatchsPage(),
-    const ClassementPage(),
-  ];
+
+  void _changePage(int index) {
+    setState(() {
+      _page = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final primary = Color(app_colors.primary);
@@ -31,7 +33,7 @@ class _PrincipalpageState extends State<Principalpage> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
-        index: 0,
+        index: _page,
         items: <Widget>[
           Icon(Icons.person, size: 30, color: primary),
           Icon(Icons.emoji_events, size: 30, color: primary),
@@ -50,7 +52,15 @@ class _PrincipalpageState extends State<Principalpage> {
         },
         letIndexChange: (index) => true,
       ),
-      body: screens[_page],
+      body: IndexedStack(
+        index: _page,
+        children: [
+          HomePage(onPageChange: _changePage),
+          CompetitionsPage(onPageChange: _changePage),
+          MatchsPage(onPageChange: _changePage),
+          ClassementPage(onPageChange: _changePage),
+        ],
+      ),
     );
   }
 }

@@ -3,11 +3,14 @@ import 'package:app010/screens/equipe_classement.dart';
 import 'package:app010/screens/matchs.dart';
 import 'package:app010/services/football_service_api.dart';
 import 'package:app010/widgets/async_state_views.dart';
+import 'package:app010/widgets/app_drawer.dart';
 import 'package:app010/colors.dart' as app_colors;
 import 'package:flutter/material.dart';
 
 class CompetitionsPage extends StatefulWidget {
-  const CompetitionsPage({super.key});
+  final Function(int)? onPageChange;
+
+  const CompetitionsPage({super.key, this.onPageChange});
 
   @override
   State<CompetitionsPage> createState() => _CompetitionsPageState();
@@ -42,7 +45,16 @@ class _CompetitionsPageState extends State<CompetitionsPage> {
     final primary = Color(app_colors.primary);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Compétitions')),
+      appBar: AppBar(
+        title: const Text('Compétitions'),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+      ),
+      drawer: AppDrawer(onPageSelected: widget.onPageChange ?? (_) {}),
       body: Column(
         children: [
           Padding(
