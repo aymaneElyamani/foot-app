@@ -37,18 +37,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final primary = Color(app_colors.primary);
     final secondary = Color(app_colors.secondary);
+    final showDrawer = widget.onPageChange != null;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mon mini CV'),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ),
+        leading: showDrawer
+            ? Builder(
+                builder: (context) => IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
+              )
+            : null,
       ),
-      drawer: AppDrawer(onPageSelected: widget.onPageChange ?? (_) {}),
+      drawer: showDrawer
+          ? AppDrawer(onPageSelected: widget.onPageChange!)
+          : null,
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

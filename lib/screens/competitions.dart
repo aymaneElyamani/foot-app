@@ -43,18 +43,23 @@ class _CompetitionsPageState extends State<CompetitionsPage> {
   @override
   Widget build(BuildContext context) {
     final primary = Color(app_colors.primary);
+    final showDrawer = widget.onPageChange != null;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Compétitions'),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ),
+        leading: showDrawer
+            ? Builder(
+                builder: (context) => IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
+              )
+            : null,
       ),
-      drawer: AppDrawer(onPageSelected: widget.onPageChange ?? (_) {}),
+      drawer: showDrawer
+          ? AppDrawer(onPageSelected: widget.onPageChange!)
+          : null,
       body: Column(
         children: [
           Padding(
