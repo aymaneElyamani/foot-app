@@ -12,25 +12,25 @@ Application mobile Flutter pour consulter en temps réel les données des compé
 
 ### Page d'accueil
 <!-- Ajouter votre screenshot ici -->
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/396c54bf-56d5-4b09-994a-6e1cadd0f8df" />
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/83848cef-6b99-4f97-a604-651824f14840" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/396c54bf-56d5-4b09-994a-6e1cadd0f8df" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/83848cef-6b99-4f97-a604-651824f14840" />
 
 ### Liste des Compétitions
 <!-- Ajouter votre screenshot ici -->
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/a581b313-a5ef-4a00-b880-2fca36dc1815" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/a581b313-a5ef-4a00-b880-2fca36dc1815" />
 
 
 ### Liste des Matchs
 <!-- Ajouter votre screenshot ici -->
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/02ef3f48-7b4e-4de5-a2f0-26914c933fe7" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/02ef3f48-7b4e-4de5-a2f0-26914c933fe7" />
 
 ### Détails d'un Match
 <!-- Ajouter votre screenshot ici -->
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/63db82e7-c9fe-4ae0-af77-67900d6d75b7" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/63db82e7-c9fe-4ae0-af77-67900d6d75b7" />
 
 ### Classement des Équipes
 <!-- Ajouter votre screenshot ici -->
-<img width="1290" height="2796" alt="image" src="https://github.com/user-attachments/assets/fd2d2d3c-3444-4fcc-90c6-9953d52e9bd2" />
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/fd2d2d3c-3444-4fcc-90c6-9953d52e9bd2" />
 
 ---
 
@@ -68,4 +68,5 @@ L'application utilise l'API gratuite de [Football-Data.org](https://www.football
 - [Dart SDK](https://dart.dev/get-dart) 3.9.2 ou supérieur
 - Un IDE (VS Code, Android Studio)
 - Une clé API de [Football-Data.org](https://www.football-data.org/)
+
 
